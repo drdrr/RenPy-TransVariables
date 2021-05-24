@@ -12,7 +12,7 @@ def allmode():
                 qlist = re.findall(r'"(.*?)(?<![^\\\\]\\\\)"', line)
                 if qlist != []:
                     for each in qlist:
-                        vlist = re.findall(r'\[(.*?)\]', each)
+                        vlist = re.findall(r'\[([^\[\]]*(?:\[[^\[\]]*\][^\[\]]*)*)\]', each)
                         if vlist != []:
                             for j in vlist:
                                 if not j.endswith('!t'):
@@ -47,7 +47,7 @@ def blackmode():
                 qlist = re.findall(r'"(.*?)(?<![^\\\\]\\\\)"', line)
                 if qlist != []:
                     for each in qlist:
-                        vlist = re.findall(r'\[(.*?)\]', each)
+                        vlist = re.findall(r'\[([^\[\]]*(?:\[[^\[\]]*\][^\[\]]*)*)\]', each)
                         if vlist != []:
                             for j in vlist:
                                 if not (j.endswith('!t') or j in bl):
@@ -81,7 +81,7 @@ def whitemode():
                 qlist = re.findall(r'"(.*?)(?<![^\\\\]\\\\)"', line)
                 if qlist != []:
                     for each in qlist:
-                        vlist = re.findall(r'\[(.*?)\]', each)
+                        vlist = re.findall(r'\[([^\[\]]*(?:\[[^\[\]]*\][^\[\]]*)*)\]', each)
                         if vlist != []:
                             for j in vlist:
                                 if j in wl and not j.endswith('!t'):
@@ -107,7 +107,7 @@ def scanmode():
                 qlist = re.findall(r'"(.*?)(?<![^\\\\]\\\\)"', line)
                 if qlist != []:
                     for each in qlist:
-                        vlist = re.findall(r'\[(.*?)\]', each)
+                        vlist = re.findall(r'\[([^\[\]]*(?:\[[^\[\]]*\][^\[\]]*)*)\]', each)
                         if vlist != []:
                             for j in vlist:
                                 if not j.endswith('!t'):
@@ -135,7 +135,7 @@ if not os.path.isfile("whitelist.txt"):
         wfile.write('# 白名单模式：将需要转换的变量放在下面，一个变量一行，不需要方括号\n# 带有井号的行是注释，会被自动忽略\n')
 
 print('RenPy多语言变量处理工具')
-print("By Koshiro, version 1.0")
+print("By Koshiro, version 1.1")
 print("使用前请将所有.rpy文件放在本目录，新的文件会存放在/new文件夹中\n\n")
 
 print("选择模式：\n1 全模式：转换所有变量（默认）\n2 白名单模式：只转换whitelist.txt中的变量\n3 黑名单模式：只不转换blacklist.txt中的变量\n4 仅读取所有变量名，不转换")
