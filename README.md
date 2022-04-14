@@ -1,4 +1,6 @@
-# This project has been archieved and discontinued. It turns out this method of translation is unnecessary.
+# This project has been archieved and discontinued. 
+
+## It turns out this method of translation is unnecessary. But you can still scan variables using this python script.
 
 ### RenPy-TransVariables
 RenPy多语言变量处理工具：给所有变量加上!t
