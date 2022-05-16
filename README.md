@@ -1,6 +1,8 @@
-# This project has been archieved and discontinued. 
+### 重要
 
-## It turns out this method of translation is unnecessary. But you can still scan variables using this python script.
+由于RenPy翻译机制的特性，可以不用对源代码中的变量做修改，而只在翻译文件中对变量加上!t。因此，推荐只用该工具进行变量的扫描！
+
+--------------
 
 ### RenPy-TransVariables
 RenPy多语言变量处理工具：给所有变量加上!t
